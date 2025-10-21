@@ -79,7 +79,7 @@ export default function Home() {
       <section className="py-16 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6">
           <h3 className="text-center text-sm font-semibold text-slate-500 uppercase tracking-wide mb-8">
-            Trusted by leading companies
+            Used by sales resps at 
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
             {/* Databricks with hover */}
