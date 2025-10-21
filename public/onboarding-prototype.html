@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-sumblebg">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Sumble Onboarding | Get Started</title>
+    <link href="Organizations%20_%20Sumble_files/output.css" rel="stylesheet">
+    <style>
+        .card {
+            transition: all 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        .hidden {
+            display: none;
+        }
+        .fade-in {
+            animation: fadeIn 0.4s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+        <!-- Logo -->
+        <div class="mb-8">
+            <img class="h-8 w-auto" src="Organizations%20_%20Sumble_files/sumble-wordmark.svg" alt="Sumble">
+        </div>
+
+        <!-- Step 1: Role Selection -->
+        <div id="step1" class="w-full max-w-4xl fade-in">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold text-slate-800 mb-4">Welcome to Sumble!</h1>
+                <p class="text-xl text-slate-600">Let's get you started. Which team are you in?</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Sales Card -->
+                <button onclick="selectRole('sales')" class="card bg-white rounded-lg p-8 border-2 border-slate-200 hover:border-green-500 cursor-pointer text-left">
+                    <div class="mb-4">
+                        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17L21 21M17 17C15.8954 17 14.8954 16.1046 14.8954 15C14.8954 13.8954 15.8954 13 17 13M17 17C18.1046 17 19.1046 16.1046 19.1046 15C19.1046 13.8954 18.1046 13 17 13M3 11C3 15.4183 6.58172 19 11 19C13.213 19 15.2161 18.1015 16.6644 16.6493M3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Sales</h3>
+                    <p class="text-slate-600">I find and qualify leads, build pipeline, and close deals</p>
+                </button>
+
+                <!-- RevOps/Marketing Ops Card -->
+                <button onclick="selectRole('revops')" class="card bg-white rounded-lg p-8 border-2 border-slate-200 hover:border-green-500 cursor-pointer text-left">
+                    <div class="mb-4">
+                        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">RevOps / Marketing Ops</h3>
+                    <p class="text-slate-600">I optimize systems, analyze data, and enable revenue teams</p>
+                </button>
+
+                <!-- Other Card -->
+                <button onclick="selectRole('other')" class="card bg-white rounded-lg p-8 border-2 border-slate-200 hover:border-green-500 cursor-pointer text-left">
+                    <div class="mb-4">
+                        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Other</h3>
+                    <p class="text-slate-600">I'm exploring, researching, or have a different role</p>
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 2: Template Selection -->
+        <div id="step2" class="w-full max-w-4xl hidden">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold text-slate-800 mb-4">Welcome, <span id="userName">User</span>!</h1>
+                <p class="text-xl text-slate-600">Let's find your first opportunity. Choose a search below:</p>
+            </div>
+
+            <div class="space-y-5">
+                <!-- Template Options will be inserted here -->
+                <div id="templateContainer"></div>
+
+                <!-- Custom Search Option -->
+                <button onclick="customSearch()" class="w-full card bg-white rounded-lg p-6 border-2 border-slate-300 border-dashed hover:border-green-500 cursor-pointer text-left flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-slate-100 group-hover:bg-green-100">
+                            <svg class="w-6 h-6 text-slate-600 group-hover:text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-1">I'll create my own search</h3>
+                            <p class="text-slate-600">Start with a blank slate and build a custom search</p>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 text-slate-400 group-hover:text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="text-center mt-8">
+                <button onclick="goBack()" class="text-slate-500 hover:text-slate-700 font-medium">
+                    ← Go back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Template data for each role
+        const templates = {
+            sales: [
+                {
+                    icon: '🚀',
+                    title: 'Companies hiring in my target tech stack',
+                    description: 'Find Series B+ startups hiring React developers in the last 30 days',
+                    filters: { tech: 'React', stage: 'Series B+', timeframe: '30 days' }
+                },
+                {
+                    icon: '🎯',
+                    title: 'Organizations using specific tools',
+                    description: 'Discover organizations using Salesforce with 50-200 employees',
+                    filters: { tech: 'Salesforce', employees: '50-200' }
+                },
+                {
+                    icon: '⚡',
+                    title: 'Active hirers this week',
+                    description: 'Search companies posting cloud engineering roles this week',
+                    filters: { role: 'Cloud Engineering', timeframe: 'This week' }
+                }
+            ],
+            revops: [
+                {
+                    icon: '📊',
+                    title: 'High-growth companies by headcount',
+                    description: 'Find companies with 20%+ employee growth in the last 6 months',
+                    filters: { growth: '20%+', timeframe: '6 months' }
+                },
+                {
+                    icon: '🔍',
+                    title: 'Companies expanding specific teams',
+                    description: 'Track organizations hiring 5+ sales roles in the last month',
+                    filters: { team: 'Sales', count: '5+', timeframe: '30 days' }
+                },
+                {
+                    icon: '📈',
+                    title: 'Market intelligence on competitors',
+                    description: 'Monitor tech stack changes and hiring patterns at target accounts',
+                    filters: { signals: 'Tech changes', list: 'Target accounts' }
+                }
+            ],
+            other: [
+                {
+                    icon: '🌟',
+                    title: 'Fast-growing tech companies',
+                    description: 'Discover startups with 100-500 employees and 15%+ job growth',
+                    filters: { employees: '100-500', growth: '15%+' }
+                },
+                {
+                    icon: '💼',
+                    title: 'Companies by industry & tech stack',
+                    description: 'Find fintech companies using AWS and expanding engineering teams',
+                    filters: { industry: 'Fintech', tech: 'AWS', team: 'Engineering' }
+                },
+                {
+                    icon: '🎓',
+                    title: 'Organizations hiring in AI/ML',
+                    description: 'Search companies with active ML engineer or data scientist roles',
+                    filters: { role: 'ML Engineer, Data Scientist', status: 'Active' }
+                }
+            ]
+        };
+
+        let selectedRole = '';
+        let userName = 'User'; // In a real app, this would come from authentication
+
+        function selectRole(role) {
+            selectedRole = role;
+            showStep2();
+        }
+
+        function showStep2() {
+            // Hide step 1
+            document.getElementById('step1').classList.add('hidden');
+
+            // Show step 2 with fade-in
+            const step2 = document.getElementById('step2');
+            step2.classList.remove('hidden');
+            step2.classList.add('fade-in');
+
+            // Update user name
+            document.getElementById('userName').textContent = userName;
+
+            // Load templates for selected role
+            loadTemplates();
+        }
+
+        function loadTemplates() {
+            const container = document.getElementById('templateContainer');
+            const roleTemplates = templates[selectedRole];
+
+            container.innerHTML = roleTemplates.map((template, index) => `
+                <button onclick="selectTemplate(${index})" class="w-full card bg-white rounded-lg p-6 border-2 border-slate-200 hover:border-green-500 cursor-pointer text-left flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                        <div class="text-4xl">${template.icon}</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-slate-800 mb-1">${template.title}</h3>
+                            <p class="text-slate-600">${template.description}</p>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 text-slate-400 group-hover:text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            `).join('');
+        }
+
+        function selectTemplate(index) {
+            const template = templates[selectedRole][index];
+            console.log('Selected template:', template);
+            // Navigate to the Sumble search interface
+            window.location.href = '/Organizations%20_%20Sumble.html';
+        }
+
+        function customSearch() {
+            console.log('Custom search selected');
+            // Navigate to the Sumble search interface
+            window.location.href = '/Organizations%20_%20Sumble.html';
+        }
+
+        function goBack() {
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step1').classList.remove('hidden');
+            document.getElementById('step1').classList.add('fade-in');
+        }
+
+        // Simulate getting user name from authentication
+        // In production, this would come from your auth system
+        if (typeof window !== 'undefined') {
+            // You could fetch this from a cookie, localStorage, or API
+            userName = 'Apurva'; // Default to match the existing user in the HTML
+            document.getElementById('userName').textContent = userName;
+        }
+    </script>
+</body>
+</html>
