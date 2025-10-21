@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -62,7 +61,7 @@ export default function Home() {
                 href="/onboarding-prototype.html"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-green-600 rounded-lg hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl"
               >
-                See Your Account Intelligence (It's free!)
+                See Your Account Intelligence (It&apos;s free!)
               </Link>
             </div>
           </div>
@@ -321,7 +320,7 @@ export default function Home() {
             href="/onboarding-prototype.html"
             className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-green-600 bg-white rounded-lg hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl"
           >
-            See Your Account Intelligence (It's free!)
+            See Your Account Intelligence (It&apos;s free!)
           </Link>
         </div>
       </section>

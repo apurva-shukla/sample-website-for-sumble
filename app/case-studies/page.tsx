@@ -64,7 +64,7 @@ export default function CaseStudies() {
                 [Industry or Company Size]
               </div>
               <h2 className="text-4xl font-bold text-slate-900 mb-4">
-                [Headline Achievement - e.g., "150% Increase in Pipeline"]
+                [Headline Achievement - e.g., &quot;150% Increase in Pipeline&quot;]
               </h2>
               <p className="text-lg text-slate-600 mb-4 leading-relaxed">
                 [Brief overview of the company and their challenge before using Sumble.]
@@ -110,7 +110,7 @@ export default function CaseStudies() {
                 [Industry or Company Size]
               </div>
               <h2 className="text-4xl font-bold text-slate-900 mb-4">
-                [Headline Achievement - e.g., "3x Faster Prospecting"]
+                [Headline Achievement - e.g., &quot;3x Faster Prospecting&quot;]
               </h2>
               <p className="text-lg text-slate-600 mb-4 leading-relaxed">
                 [Company overview and initial challenge.]
@@ -170,7 +170,7 @@ export default function CaseStudies() {
                 [Industry or Company Size]
               </div>
               <h2 className="text-4xl font-bold text-slate-900 mb-4">
-                [Headline Achievement - e.g., "40% Higher Win Rate"]
+                [Headline Achievement - e.g., &quot;40% Higher Win Rate&quot;]
               </h2>
               <p className="text-lg text-slate-600 mb-4 leading-relaxed">
                 [Company overview and challenge.]
