@@ -19,9 +19,6 @@ export default function Home() {
                   className="h-10 w-auto"
                 />
               </Link>
-              <Link href="/" className="text-slate-700 hover:text-green-600 font-medium transition-colors">
-                Home
-              </Link>
               <Link href="/what-is-sumble" className="text-slate-700 hover:text-green-600 font-medium transition-colors">
                 Why Sumble?
               </Link>
