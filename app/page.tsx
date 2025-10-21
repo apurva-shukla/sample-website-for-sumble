@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -7,8 +8,17 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-slate-200 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* Left side - Navigation links */}
+            {/* Left side - Logo and Navigation links */}
             <div className="flex items-center gap-8">
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/sumble.jpg"
+                  alt="Sumble Logo"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+              </Link>
               <Link href="/" className="text-slate-700 hover:text-green-600 font-medium transition-colors">
                 Home
               </Link>
